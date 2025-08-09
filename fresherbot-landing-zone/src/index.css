@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === BASE LAYER === */
+@layer base {
+  :root {
+    /* Light Mode */
+    --background: linear-gradient(to right, #fef2f2, #ffe4e6);
+    --foreground: #222f3e;
+
+    --card: #ffffff;
+    --card-foreground: #222f3e;
+
+    --popover: #fef2f2;
+    --popover-foreground: #222f3e;
+
+    --primary: #FF6B6B;
+    --primary-foreground: #FFFFFF;
+
+    --secondary: #4ECDC4;
+    --secondary-foreground: #FFFFFF;
+
+    --muted: #F3F4F6;
+    --muted-foreground: #374151;
+
+    --accent: #FFC107;
+    --accent-foreground: #222f3e;
+
+    --destructive: #FF3B3B;
+    --destructive-foreground: #FFFFFF;
+
+    --border: #E5E7EB;
+    --input: #FFFFFF;
+    --ring: #4CAF50;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark Mode */
+    --background: linear-gradient(to right, #1f2937, #111827);
+    --foreground: #F9FAFB;
+
+    --card: #222f3e;
+    --card-foreground: #F9FAFB;
+
+    --popover: #374151;
+    --popover-foreground: #F9FAFB;
+
+    --primary: #FF6B6B;
+    --primary-foreground: #FFFFFF;
+
+    --secondary: #4ECDC4;
+    --secondary-foreground: #FFFFFF;
+
+    --muted: #111827;
+    --muted-foreground: #D1D5DB;
+
+    --accent: #FFC107;
+    --accent-foreground: #222f3e;
+
+    --destructive: #FF3B3B;
+    --destructive-foreground: #FFFFFF;
+
+    --border: #374151;
+    --input: #374151;
+    --ring: #10B981;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-montserrat;
+  }
+
+  .feature-slide {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+/* === COMPONENTS LAYER === */
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-[#E55A5A] text-white transition-all shadow-md hover:shadow-xl rounded-md;
+  }
+
+  .btn-outline {
+    @apply border-2 border-secondary text-secondary hover:bg-secondary/10 transition-all rounded-md;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl shadow-lg;
+  }
+
+  .animated-badge {
+    @apply animate-pulse;
+  }
+
+  .animated-feature {
+    @apply animate-float;
+  }
+
+  .responsive-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+
+  .responsive-subheading {
+    @apply text-xl md:text-2xl;
+  }
+
+  .bg-blue-gradient {
+    @apply bg-gradient-to-r from-[#4ECDC4] to-[#00b894];
+  }
+
+  .feature-card {
+    @apply p-6 rounded-xl border border-gray-300 bg-white shadow-md hover:shadow-xl transition-all duration-300;
+  }
+
+  .border-bottom-highlight {
+    @apply border-b-4 border-primary;
+  }
+
+  .hover-scale {
+    @apply transition-transform hover:scale-105 duration-300;
+  }
+
+  .hover-lift {
+    @apply transition-all hover:-translate-y-1 duration-300;
+  }
+
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .feature-slide.active {
+    z-index: 10;
+  }
+
+  .pb-bottom-nav {
+    padding-bottom: 80px;
+  }
+
+  .bg-gradient {
+    background: linear-gradient(135deg, #f3f4ff 0%, #ffffff 100%);
+  }
+
+  .title-font {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .step-content {
+    transition: all 0.3s ease;
+  }
+
+  .step-content.hidden {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  .step-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .blue-circle {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: #4ECDC4;
+    opacity: 0.1;
+    z-index: 0;
+    left: -200px;
+    top: -100px;
+  }
+
+  /* === Testimonials Styles === */
+  .testimonial-section {
+    @apply py-20 bg-gradient-to-b from-[#fff0f3] via-[#fdf4f5] to-white;
+  }
+
+  .testimonial-heading-badge {
+    @apply inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-rose-100 text-rose-600 mb-4;
+  }
+
+  .testimonial-heading-title {
+    @apply text-4xl md:text-5xl font-extrabold mb-6 text-gray-900;
+  }
+
+  .testimonial-heading-subtitle {
+    @apply text-gray-600 max-w-3xl mx-auto mb-12 text-lg;
+  }
+
+  .testimonial-carousel {
+    @apply w-full max-w-6xl mx-auto px-4;
+  }
+
+  .testimonial-card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col h-full justify-between;
+  }
+
+  .testimonial-stars {
+    @apply flex mb-4;
+  }
+
+  .testimonial-quote {
+    @apply flex items-start mb-4;
+  }
+
+  .testimonial-quote-text {
+    @apply text-gray-800 text-base font-medium italic;
+  }
+
+  .testimonial-author {
+    @apply flex items-center mt-4 pt-4 border-t border-gray-200;
+  }
+
+  .testimonial-author-avatar {
+    @apply w-12 h-12 flex items-center justify-center bg-rose-100 rounded-full font-bold text-rose-600 text-xl mr-4;
+  }
+
+  .testimonial-author-info-name {
+    @apply font-semibold text-gray-900;
+  }
+
+  .testimonial-author-info-role {
+    @apply text-sm text-gray-500;
+  }
+
+  .testimonial-carousel-controls {
+    @apply flex justify-center mt-8 gap-4 flex-wrap;
+  }
+
+  .testimonial-carousel-btn {
+    @apply bg-gradient-to-r from-rose-500 to-pink-500 text-white hover:opacity-90 px-4 py-2 rounded-lg shadow-md;
+  }
+}
+
+/* === OVERRIDES / UTILITIES === */
+.pt-16 {
+  padding-top: 4rem;
+}
